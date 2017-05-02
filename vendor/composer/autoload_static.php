@@ -17,6 +17,10 @@ class ComposerStaticInitadceaa1db0bee4c54518799f485103d9
             'Plugins\\' => 8,
             'Paginator\\' => 10,
         ),
+        'H' => 
+        array (
+            'HybridLogic\\' => 12,
+        ),
         'F' => 
         array (
             'Fileuploader\\' => 13,
@@ -40,19 +44,13 @@ class ComposerStaticInitadceaa1db0bee4c54518799f485103d9
         array (
             0 => __DIR__ . '/../..' . '/core/Paginator',
         ),
+        'HybridLogic\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/HybridLogic',
+        ),
         'Fileuploader\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core/Fileuploader',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'H' => 
-        array (
-            'HybridLogic' => 
-            array (
-                0 => __DIR__ . '/../..' . '/core/HybridLogic',
-            ),
         ),
     );
 
@@ -100,7 +98,6 @@ class ComposerStaticInitadceaa1db0bee4c54518799f485103d9
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitadceaa1db0bee4c54518799f485103d9::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitadceaa1db0bee4c54518799f485103d9::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitadceaa1db0bee4c54518799f485103d9::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitadceaa1db0bee4c54518799f485103d9::$classMap;
 
         }, null, ClassLoader::class);

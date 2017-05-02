@@ -17,10 +17,8 @@
       "Plugins\\":"plug-ins",
       "Routes\\":"routes/",
       "Paginator\\":"core/Paginator/",
-      "Fileuploader\\":"core/Fileuploader"
-    },
-    "psr-0": {
-      "HybridLogic": "core/HybridLogic"
+      "Fileuploader\\":"core/Fileuploader",
+      "HybridLogic\\": "core/HybridLogic"
     }
   
   }
