@@ -416,5 +416,3 @@ function get_config_value($config_index){
 	}
 }
 
-store_last_postdata(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
-
