@@ -15,6 +15,7 @@ class View {
 
 	public function __construct(){
 
+		
 	}
 
 	public static function show($view,$vars=[],$http_headers = array()){
@@ -37,9 +38,7 @@ class View {
 				}
 			}
 
-			header("Content-Security-Policy:default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self'");
-			header("X-Frame-Options:SAMEORIGIN");
-			header("X-XSS-Protection:1; mode=block");
+
 
 			extract(self::$pageVars);
 			ob_start();
@@ -53,5 +52,13 @@ class View {
 
 		}
 	
+	}
+
+	private static function set_default_headers(){
+
+	header("Content-Security-Policy:default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self'");
+	header("X-Frame-Options:SAMEORIGIN");
+	header("X-XSS-Protection:1; mode=block");
+
 	}
 }

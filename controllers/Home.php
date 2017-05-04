@@ -19,6 +19,7 @@ class Home extends Controller{
 
 		$page_data = array('page_title'=>'BlueCloud PHP MVC &middot; Default Page');
 		View::show('default',$page_data);
+		View::show('footer',$page_data);
 		
 	}
 
