@@ -12,8 +12,14 @@ namespace Database\DBConnection;
 use \PDO;
 
 /*
+*------------------------------------------------------------------------------------------------------------
 * In sqlite database type, provide the path of the database file and provide also set the $db_type to sqlite
 * In mysql database type, the host,dbname,username,password are mandatory 
+* Available options for $db_type:
+*-------------------------------------------------------------------------------------------------------------
+* public static $db_type = 'sqlite' [sqlite database]
+* public static $db_type =  'mysql' [mysql database]
+*--------------------------------------------------------------------------------------------------------------
 */
 
 class DBConnection {
@@ -23,7 +29,7 @@ class DBConnection {
 	public static $dbname="";
 	public static $username="";
 	public static $password="";
-	public static $db_type = ""; //available options -> sqlite,mysql for the meantime
+	public static $db_type = "";
 	public static $charset = "";
 	public static $dsn = "";
 	public static $pdo_opt = array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);

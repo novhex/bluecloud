@@ -6,7 +6,7 @@
 * Copyright (c) 2017 Vhexzhen Lei
 * vhexzhenlei.tk
 */
-namespace Core\View;
+namespace View;
 
 class View {
 
@@ -17,7 +17,7 @@ class View {
 
 	}
 
-	public static function show($view,$vars=[]){
+	public static function show($view,$vars=[],$http_headers = array()){
 
 		if($vars != NULL) {
 
@@ -29,6 +29,17 @@ class View {
 
 		if(file_exists(ROOT_DIR .'views/'. $view .'.php')){
 
+			if(sizeof($http_headers)>=1){
+
+				foreach($http_headers as $header_keys =>$header_vals){
+
+					header($header_keys.':'.$header_vals);
+				}
+			}
+
+			header("Content-Security-Policy:default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self'");
+			header("X-Frame-Options:SAMEORIGIN");
+			header("X-XSS-Protection:1; mode=block");
 
 			extract(self::$pageVars);
 			ob_start();

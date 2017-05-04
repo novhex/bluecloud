@@ -1,28 +1,24 @@
 <?php
 
-// Namespace for Controller -Important
-namespace controllers;
+namespace Controllers;
 
-// namespace for controller -Important
-use \Core\Controller\Controller;
-//namespace for views - Important
-use \Core\View\View;
+use Controller\Controller;
 
-
+use View\View;
 
 
 class Home extends Controller{
 
 	public function __construct(){
-		//don't forget this construct
+		
 		parent::__construct();
 	}
 
 
 	public function index(){
 
-		$data['page_title'] = 'Welcome - BlueCloud &ndash; Another Micro PHP MVC ';
-		View::show('default',$data);
+		$page_data = array('page_title'=>'BlueCloud PHP MVC &middot; Default Page');
+		View::show('default',$page_data);
 		
 	}
 

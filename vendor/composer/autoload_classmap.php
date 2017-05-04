@@ -7,8 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Bootstrap' => $baseDir . '/core/Bootstrap.php',
-    'Core\\Controller\\Controller' => $baseDir . '/core/Controller.php',
-    'Core\\View\\View' => $baseDir . '/core/View.php',
+    'Controller\\Controller' => $baseDir . '/core/Controller.php',
     'Database\\DBConnection\\DBConnection' => $baseDir . '/database/DBconnection.php',
     'Fileuploader\\Fileuploader' => $baseDir . '/core/Fileuploader/Fileuploader.php',
     'FluentPDO' => $baseDir . '/core/FluentPDO/FluentPDO.php',
@@ -42,4 +41,5 @@ return array(
     'Paginator\\Paginator' => $baseDir . '/core/Paginator/Paginator.php',
     'Router\\Router' => $baseDir . '/core/Router/Router.php',
     'Routes\\Routes' => $baseDir . '/routes/Routelist.php',
+    'View\\View' => $baseDir . '/core/View.php',
 );

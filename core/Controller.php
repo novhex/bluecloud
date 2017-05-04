@@ -7,14 +7,14 @@
 * vhexzhenlei.tk
 */
 
-namespace Core\Controller;
+namespace Controller;
 
 use \Database\DBConnection\DBConnection as DB;
 
 
 class Controller{
 
-	public $ORM;
+	public $query_builder;
 
 	public function __construct(){
 
@@ -22,12 +22,12 @@ class Controller{
 
 			if(DB::$db_type=='mysql'){
 
-				$this->ORM = new \FluentPDO(new \PDO("mysql:host=".DB::$host.";dbname=".DB::$dbname.";charset=".DB::$charset, DB::$username, DB::$password,DB::$pdo_opt));	
+				$this->query_builder = new \FluentPDO(new \PDO("mysql:host=".DB::$host.";dbname=".DB::$dbname.";charset=".DB::$charset, DB::$username, DB::$password,DB::$pdo_opt));	
 
 			}else if(DB::$db_type=='sqlite'){
 
 				if(DB::$dsn!==''){
-					$this->ORM = new \FluentPDO(new \PDO(DB::$dsn));
+					$this->query_builder = new \FluentPDO(new \PDO(DB::$dsn));
 				}else{
 					
 					die("<div style='color:red;'>Please specify your DSN connection string.</div>");
