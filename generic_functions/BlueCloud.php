@@ -313,34 +313,34 @@ function  random_string($type = 'alnum', $len = 8){
 
 	switch ($type){
 
-			case 'basic':
-				return mt_rand();
-			case 'alnum':
-			case 'numeric':
-			case 'nozero':
-			case 'alpha':
-				switch ($type)
-				{
-					case 'alpha':
-						$pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-						break;
-					case 'alnum':
-						$pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-						break;
-					case 'numeric':
-						$pool = '0123456789';
-						break;
-					case 'nozero':
-						$pool = '123456789';
-						break;
-				}
-				return substr(str_shuffle(str_repeat($pool, ceil($len / strlen($pool)))), 0, $len);
-			case 'unique':
-			case 'md5':
-				return md5(uniqid(mt_rand()));
-			case 'encrypt':
-			case 'sha1':
-				return sha1(uniqid(mt_rand(), TRUE));
+		case 'basic':
+			return mt_rand();
+		case 'alnum':
+		case 'numeric':
+		case 'nozero':
+		case 'alpha':
+			switch ($type)
+			{
+				case 'alpha':
+					$pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+					break;
+				case 'alnum':
+					$pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+					break;
+				case 'numeric':
+					$pool = '0123456789';
+					break;
+				case 'nozero':
+					$pool = '123456789';
+					break;
+			}
+			return substr(str_shuffle(str_repeat($pool, ceil($len / strlen($pool)))), 0, $len);
+		case 'unique':
+		case 'md5':
+			return md5(uniqid(mt_rand()));
+		case 'encrypt':
+		case 'sha1':
+			return sha1(uniqid(mt_rand(), TRUE));
 	}
 }
 
@@ -408,12 +408,19 @@ function old_value($field_name){
 
 function get_config_value($config_index){
 
-	$values = parse_ini_file(ROOT_DIR.'config/config.ini',TRUE);
+	if(file_exists(ROOT_DIR.'config/config.ini')):
 
-	if(isset($values['config'][$config_index])){
+		$values = parse_ini_file(ROOT_DIR.'config/config.ini',TRUE);
 
-		return $values['config'][$config_index];
-	}
+		if(isset($values['config'][$config_index])){
+
+			return $values['config'][$config_index];
+		}
+	else
+
+		return 'Cannot locate the config.ini file!';
+		
+	endif;
 }
 
 function purify_html(){

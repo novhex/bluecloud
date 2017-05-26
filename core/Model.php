@@ -7,12 +7,11 @@
 * vhexzhenlei.tk
 */
 
-namespace Controller;
+namespace Model;
 
 use \Database\DBConnection\DBConnection as DB;
 
-
-class Controller{
+class Model {
 
 	public $query_builder = NULL;
 
@@ -49,8 +48,7 @@ class Controller{
 
 			
 		}
-		
-		
 	}
+
 
 }

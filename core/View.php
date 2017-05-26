@@ -18,7 +18,7 @@ class View {
 		
 	}
 
-	public static function show($view,$vars=[],$http_headers = array()){
+	public static function show($view, $vars=[], $http_headers = array()){
 
 		if($vars != NULL) {
 
