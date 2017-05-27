@@ -427,3 +427,17 @@ function purify_html(){
 
 	return new \HTMLPurifier(\HTMLPurifier_Config::createDefault());
 }
+
+
+function hash_pwd($pass,$method='default',$cost=11){
+
+	if($method=='bcrypt'){
+
+		return password_hash($pass,PASSWORD_BCRYPT,array('cost'=>$cost));
+
+	}else{
+
+		return password_hash($pass,PASSWORD_DEFAULT,array('cost'=>$cost));
+	}
+
+}

@@ -25,12 +25,12 @@ use \PDO;
 class DBConnection {
 
 	public static $db;
-	public static $host="";
-	public static $dbname="";
-	public static $username="";
+	public static $host="127.0.0.1";
+	public static $dbname="ajaxdb";
+	public static $username="root";
 	public static $password="";
-	public static $db_type = "";
-	public static $charset = "";
+	public static $db_type = "mysql";
+	public static $charset = "utf8mb4";
 	public static $dsn = "";
 	public static $pdo_opt = array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 

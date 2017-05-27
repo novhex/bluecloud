@@ -28,6 +28,7 @@ class Bootstrap {
 			require_once $controllers;
 		}
 	}
+	
 
 	private  static function loadGenericFunctions(){
 
