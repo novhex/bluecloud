@@ -40,7 +40,7 @@ class Bootstrap {
 
 	private static function loadHTMLPurifier(){
 
-		require_once ROOT_DIR.'core/HTMLPurifier/HTMLPurifier.auto.php';
+		require_once ROOT_DIR.'core/HTMLpurifier/HTMLPurifier.auto.php';
 	}
 
 
